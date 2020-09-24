@@ -1000,7 +1000,9 @@ kbd {
   overflow: auto;
   position: relative;
   max-height: 70vh;
-  white-space: nowrap;
+  white-space: normal;
+  word-wrap: break-word;
+  word-break: break-word;
 }
 .sidebar-toc .toc-child {
   display: none;
