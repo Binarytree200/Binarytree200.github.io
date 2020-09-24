@@ -1,9 +1,9 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/favicon-16x16.png?v=2.1.1" type="image/png" sizes="16x16"><link rel="icon" href="/images/favicon-32x32.png?v=2.1.1" type="image/png" sizes="32x32"><meta name="description" content="if语句和if else语句 if语句if(判断语句)表达式如果判断语句为真就执行表达式 if else语句 if（判断语句）表达式1else表达式2例如： 、# include &lt;stdio.h&gt;main(){ int age; printf(“请输入你的年龄：”); scanf(“%d”, &amp;age); if(age&gt;&#x3D;18){ printf(“恭喜，你已经成年\n">
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/favicon-16x16.png?v=2.1.1" type="image/png" sizes="16x16"><link rel="icon" href="/images/favicon-32x32.png?v=2.1.1" type="image/png" sizes="32x32"><meta name="description" content="if语句和if else语句 if语句if(判断语句)表达式如果判断语句为真就执行表达式 if else语句 if（判断语句）表达式1else表达式2例如：">
 <meta property="og:type" content="article">
 <meta property="og:title" content="2.3 C控制语句：分支和跳转1">
 <meta property="og:url" content="https://binarytree200.github.io/2017/10/27/10/index.html">
 <meta property="og:site_name" content="binarytree200的日记">
-<meta property="og:description" content="if语句和if else语句 if语句if(判断语句)表达式如果判断语句为真就执行表达式 if else语句 if（判断语句）表达式1else表达式2例如： 、# include &lt;stdio.h&gt;main(){ int age; printf(“请输入你的年龄：”); scanf(“%d”, &amp;age); if(age&gt;&#x3D;18){ printf(“恭喜，你已经成年\n">
+<meta property="og:description" content="if语句和if else语句 if语句if(判断语句)表达式如果判断语句为真就执行表达式 if else语句 if（判断语句）表达式1else表达式2例如：">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2017-10-27T14:49:00.000Z">
 <meta property="article:modified_time" content="2019-10-01T05:48:05.000Z">
@@ -37,7 +37,9 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.2.0"></he
 <p>if语句和if else语句</p>
 <p>if语句<br>if(判断语句)<br>表达式<br>如果判断语句为真就执行表达式</p>
 <p>if else语句</p>
-<p>if（判断语句）<br>表达式1<br>else<br>表达式2<br>例如：<br> 、# include &lt;stdio.h&gt;<br>main()<br>{<br> int age;<br> printf(“请输入你的年龄：”);<br> scanf(“%d”, &amp;age);<br> if(age&gt;=18){<br> printf(“恭喜，你已经成年\n”);<br> }else{<br> printf(“抱歉，你还未成年\n”);<br> }<br>}<br>程序分析<br>这是一个判断是否成年的程序，如果if(age&gt;=18)为真则执行 恭喜，你已经成年 如果为假则执行 抱歉，你还未成年<br>注意else与向上最近的为匹配的if匹配</p>
+<p>if（判断语句）<br>表达式1<br>else<br>表达式2<br>例如：</p>
+<a id="more"></a>
+<p> 、# include &lt;stdio.h&gt;<br>main()<br>{<br> int age;<br> printf(“请输入你的年龄：”);<br> scanf(“%d”, &amp;age);<br> if(age&gt;=18){<br> printf(“恭喜，你已经成年\n”);<br> }else{<br> printf(“抱歉，你还未成年\n”);<br> }<br>}<br>程序分析<br>这是一个判断是否成年的程序，如果if(age&gt;=18)为真则执行 恭喜，你已经成年 如果为假则执行 抱歉，你还未成年<br>注意else与向上最近的为匹配的if匹配</p>
 <hr>
 <p>逻辑运算符</p>
 <p>&amp;&amp;  与<br>||  或<br>！  非<br>假设exp1和exp2是两个简单的关系表达式那么<br>exp1&amp;&amp;exp2 都为真是整判断式才为真其余都为假<br>exp1||exp2 都为假是整判断式才为真其余都为真<br>！exp1 如果exp1为真时则变为假 如果exp1为假时则变为真<br>条件运算符： ？：<br>语句1？A2：A3<br>如果语句1为真则取A2的值否则取A3的值</p>
