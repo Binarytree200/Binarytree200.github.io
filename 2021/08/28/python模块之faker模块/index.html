@@ -1,0 +1,207 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/favicon-16x16.png?v=2.1.1" type="image/png" sizes="16x16"><link rel="icon" href="/images/favicon-32x32.png?v=2.1.1" type="image/png" sizes="32x32"><meta name="description" content="python模块一之faker模块       faker模块主要是用来创建伪数据，无需手动生成或者手写随机数来生成数据，可以利用faker完成伪造大量测试数据的工作                     一、安装       pip install faker                      二、使用       from faker import Faker">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python模块之faker模块">
+<meta property="og:url" content="https://binarytree200.github.io/2021/08/28/python%E6%A8%A1%E5%9D%97%E4%B9%8Bfaker%E6%A8%A1%E5%9D%97/index.html">
+<meta property="og:site_name" content="binarytree200的日记">
+<meta property="og:description" content="python模块一之faker模块       faker模块主要是用来创建伪数据，无需手动生成或者手写随机数来生成数据，可以利用faker完成伪造大量测试数据的工作                     一、安装       pip install faker                      二、使用       from faker import Faker">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-08-28T09:22:00.000Z">
+<meta property="article:modified_time" content="2021-08-28T09:59:11.368Z">
+<meta property="article:author" content="二叉树">
+<meta property="article:tag" content="python">
+<meta name="twitter:card" content="summary"><title>python模块之faker模块 | binarytree200的日记</title><link ref="canonical" href="https://binarytree200.github.io/2021/08/28/python%E6%A8%A1%E5%9D%97%E4%B9%8Bfaker%E6%A8%A1%E5%9D%97/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.1.1"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
+  header: {"enable":true,"showOnPost":true,"scrollDownIcon":false},
+  postWidget: {"endText":true},
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"default","highlight":"light","wordWrap":false},
+  reward: false,
+  fancybox: false,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: false,
+  pjax: undefined,
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"复制","copySuccess":"复制成功","copyError":"复制失败"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.2.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">归档</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-menu-item__text">分类</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-menu-item__text">标签</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">binarytree200的日记</div><div class="header-banner-info__subtitle"></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">python模块之faker模块</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-08-28</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-08-28</span></span></div></header><div class="post-body">
+        <h4 id="python模块一之faker模块"   >
+          <a href="#python模块一之faker模块" class="heading-link"><i class="fas fa-link"></i></a>python模块一之faker模块</h4>
+      <p>faker模块主要是用来创建伪数据，无需手动生成或者手写随机数来生成数据，可以利用faker完成伪造大量测试数据的工作</p>
+
+        <h5 id="一、安装"   >
+          <a href="#一、安装" class="heading-link"><i class="fas fa-link"></i></a>一、安装</h5>
+      <p>pip install faker </p>
+
+        <h5 id="二、使用"   >
+          <a href="#二、使用" class="heading-link"><i class="fas fa-link"></i></a>二、使用</h5>
+      <p>from faker import Faker</p>
+<p>f = Faker(locale=’zh_CN’)      #为生成数据的文化选项，默认为en_US，只有使用了相关文化，才能生成对应的随机信息，由于文化差异，设置文化的时候会导致有些字段比如省份等会出现方法报错等问题</p>
+<p>for i in range(5):</p>
+<figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(f.name() + <span class="string">&quot;:&quot;</span> + f.address())   <span class="comment">#随机生成中文姓名和地址,name()函数生成姓名，address()函数生成地址</span></span><br></pre></td></tr></table></div></figure>
+<a id="more"></a>
+
+        <h5 id="三、常用函数介绍"   >
+          <a href="#三、常用函数介绍" class="heading-link"><i class="fas fa-link"></i></a>三、常用函数介绍</h5>
+      <p>city_suffix()：市，县</p>
+<p>country()：国家</p>
+<p>country_code()：国家编码</p>
+<p>district()：区</p>
+<p>geo_coordinate()：地理坐标</p>
+<p>latitude()：地理坐标(纬度)</p>
+<p>longitude()：地理坐标(经度)</p>
+<p>lexify()：替换所有问号（“？”）带有随机字母的事件。</p>
+<p>numerify()：三位随机数字</p>
+<p>postcode()：邮编</p>
+<p>province()：省份</p>
+<p>street_address()：街道地址</p>
+<p>street_name()：街道名</p>
+<p>street_suffix()：街、路</p>
+<p>random_digit()：0~9随机数</p>
+<p>random_digit_not_null()：1~9的随机数</p>
+<p>random_element()：随机字母</p>
+<p>random_int()：随机数字，默认0~9999，可以通过设置min,max来设置</p>
+<p>random_letter()：随机字母</p>
+<p>random_number()：随机数字，参数digits设置生成的数字位数</p>
+<p>color_name()：随机颜色名</p>
+<p>hex_color()：随机HEX颜色</p>
+<p>rgb_color()：随机RGB颜色</p>
+<p>safe_color_name()：随机安全色名</p>
+<p>safe_hex_color()：随机安全HEX颜色</p>
+<p>bs()：随机公司服务名</p>
+<p>company()：随机公司名（长）</p>
+<p>company_prefix()：随机公司名（短）</p>
+<p>company_suffix()：公司性质</p>
+<p>credit_card_expire()：随机信用卡到期日</p>
+<p>credit_card_full()：生成完整信用卡信息</p>
+<p>credit_card_number()：信用卡号</p>
+<p>credit_card_provider()：信用卡类型</p>
+<p>credit_card_security_code()：信用卡安全码</p>
+<p>currency_code()：货币编码</p>
+<p>am_pm()：AM/PM</p>
+<p>century()：随机世纪</p>
+<p>date()：随机日期</p>
+<p>date_between()：随机生成指定范围内日期，参数：start_date，end_date取值：具体日期或者today,-30d,-30y类似</p>
+<p>date_between_dates()：随机生成指定范围内日期，用法同上</p>
+<p>date_object()：随机生产从1970-1-1到指定日期的随机日期。</p>
+<p>date_this_month()：</p>
+<p>date_this_year()：</p>
+<p>date_time()：随机生成指定时间（1970年1月1日至今）</p>
+<p>date_time_ad()：生成公元1年到现在的随机时间</p>
+<p>date_time_between()：用法同dates</p>
+<p>future_date()：未来日期</p>
+<p>future_datetime()：未来时间</p>
+<p>month()：随机月份</p>
+<p>month_name()：随机月份（英文）</p>
+<p>past_date()：随机生成已经过去的日期</p>
+<p>past_datetime()：随机生成已经过去的时间</p>
+<p>time()：随机24小时时间</p>
+<p>timedelta()：随机获取时间差</p>
+<p>time_object()：随机24小时时间，time对象</p>
+<p>time_series()：随机TimeSeries对象</p>
+<p>timezone()：随机时区</p>
+<p>unix_time()：随机Unix时间</p>
+<p>year()：随机年份</p>
+<p>file_extension()：随机文件扩展名</p>
+<p>file_name()：随机文件名（包含扩展名，不包含路径）</p>
+<p>file_path()：随机文件路径（包含文件名，扩展名）</p>
+<p>mime_type()：随机mime Type</p>
+<p>ascii_company_email()：随机ASCII公司邮箱名</p>
+<p>ascii_email()：随机ASCII邮箱</p>
+<p>ascii_free_email()：</p>
+<p>ascii_safe_email()：</p>
+<p>company_email()：</p>
+<p>domain_name()：生成域名</p>
+<p>domain_word()：域词(即，不包含后缀)</p>
+<p>email()：</p>
+<p>free_email()：</p>
+<p>free_email_domain()：</p>
+<p>f.safe_email()：安全邮箱</p>
+<p>f.image_url()：随机URL地址</p>
+<p>ipv4()：随机IP4地址</p>
+<p>ipv6()：随机IP6地址</p>
+<p>mac_address()：随机MAC地址</p>
+<p>tld()：网址域名后缀(.com,.net.cn,等等，不包括.)</p>
+<p>uri()：随机URI地址</p>
+<p>uri_extension()：网址文件后缀</p>
+<p>uri_page()：网址文件（不包含后缀）</p>
+<p>uri_path()：网址文件路径（不包含文件名）</p>
+<p>url()：随机URL地址</p>
+<p>user_name()：随机用户名</p>
+<p>isbn10()：随机ISBN（10位）</p>
+<p>isbn13()：随机ISBN（13位）</p>
+<p>job()：随机职位</p>
+<p>paragraph()：随机生成一个段落</p>
+<p>paragraphs()：随机生成多个段落，通过参数nb来控制段落数，返回数组</p>
+<p>sentence()：随机生成一句话</p>
+<p>sentences()：随机生成多句话，与段落类似</p>
+<p>text()：随机生成一篇文章（不要幻想着人工智能了，至今没完全看懂一句话是什么意思）</p>
+<p>word()：随机生成词语</p>
+<p>words()：随机生成多个词语，用法与段落，句子，类似</p>
+<p>binary()：随机生成二进制编码</p>
+<p>boolean()：True/False</p>
+<p>language_code()：随机生成两位语言编码</p>
+<p>locale()：随机生成语言/国际 信息</p>
+<p>md5()：随机生成MD5</p>
+<p>null_boolean()：NULL/True/False</p>
+<p>password()：随机生成密码,可选参数：length：密码长度；special_chars：是否能使用特殊字符；digits：是否包含数字；upper_case：是否包含大写字母；lower_case：是否包含小写字母</p>
+<p>sha1()：随机SHA1</p>
+<p>sha256()：随机SHA256</p>
+<p>uuid4()：随机UUID</p>
+<p>first_name()：</p>
+<p>first_name_female()：女性名</p>
+<p>first_name_male()：男性名</p>
+<p>first_romanized_name()：罗马名</p>
+<p>last_name()：</p>
+<p>last_name_female()：女姓</p>
+<p>last_name_male()：男姓</p>
+<p>last_romanized_name()：</p>
+<p>name()：随机生成全名</p>
+<p>name_female()：男性全名</p>
+<p>name_male()：女性全名</p>
+<p>romanized_name()：罗马名</p>
+<p>msisdn()：移动台国际用户识别码，即移动用户的ISDN号码</p>
+<p>phone_number()：随机生成手机号</p>
+<p>phonenumber_prefix()：随机生成手机号段</p>
+<p>profile()：随机生成档案信息</p>
+<p>simple_profile()：随机生成简单档案信息</p>
+
+        <h6 id="3-4-随机生成指定类型数据"   >
+          <a href="#3-4-随机生成指定类型数据" class="heading-link"><i class="fas fa-link"></i></a>3.4 随机生成指定类型数据</h6>
+      <p>pybool()：布尔类型</p>
+<p>pydecimal()：数字</p>
+<p>pydict()：字典</p>
+<p>pyfloat()：left_digits=5 #生成的整数位数, right_digits=2 #生成的小数位数, positive=True #是否只有正数</p>
+<p>pyint()：整型</p>
+<p>pyiterable()：迭代器</p>
+<p>pylist()：列表</p>
+<p>pyset()：集合</p>
+<p>pystr()：字符串</p>
+<p>pystruct()：结构体</p>
+<p>pytuple()：元组</p>
+
+        <h6 id="3-5-随机生成常用数据"   >
+          <a href="#3-5-随机生成常用数据" class="heading-link"><i class="fas fa-link"></i></a>3.5 随机生成常用数据</h6>
+      <p>ssn()：生成身份证号</p>
+<p>chrome()：随机生成Chrome的浏览器user_agent信息</p>
+<p>firefox()：随机生成FireFox的浏览器user_agent信息</p>
+<p>internet_explorer()：随机生成IE的浏览器user_agent信息</p>
+<p>opera()：随机生成Opera的浏览器user_agent信息</p>
+<p>safari()：随机生成Safari的浏览器user_agent信息</p>
+<p>linux_platform_token()：随机Linux信息</p>
+<p>user_agent()：随机user_agent信息</p>
+</div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ 本文结束，感谢您的阅读 ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">本文作者: </span><span class="copyright-author__value"><a href="https://Binarytree200.github.io">二叉树</a></span></div><div class="copyright-link"><span class="copyright-link__name">本文链接: </span><span class="copyright-link__value"><a href="https://binarytree200.github.io/2021/08/28/python%E6%A8%A1%E5%9D%97%E4%B9%8Bfaker%E6%A8%A1%E5%9D%97/">https://binarytree200.github.io/2021/08/28/python%E6%A8%A1%E5%9D%97%E4%B9%8Bfaker%E6%A8%A1%E5%9D%97/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">版权声明: </span><span class="copyright-notice__value">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> 许可协议。转载请注明出处！</span></div></div><div class="post-tags"><span class="post-tags-item"><span class="post-tags-item__icon"><i class="fas fa-tag"></i></span><a class="post-tags-item__link" href="https://binarytree200.github.io/tags/python/">python</a></span></div><nav class="post-paginator paginator"><div class="paginator-prev"><a class="paginator-prev__link" href="/2021/08/28/%E4%BA%A4%E6%8D%A2%E6%9C%BA%E9%85%8D%E7%BD%AE/"><span class="paginator-prev__icon"><i class="fas fa-angle-left"></i></span><span class="paginator-prev__text">交换机配置</span></a></div><div class="paginator-next"><a class="paginator-next__link" href="/2020/09/23/79/"><span class="paginator-prev__text">mysql中information_schema数据库说明（SQL注入查询数据库 表 列来源）</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#python%E6%A8%A1%E5%9D%97%E4%B8%80%E4%B9%8Bfaker%E6%A8%A1%E5%9D%97"><span class="toc-number">1.</span> <span class="toc-text">
+          python模块一之faker模块</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%AE%89%E8%A3%85"><span class="toc-number">1.1.</span> <span class="toc-text">
+          一、安装</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E4%BD%BF%E7%94%A8"><span class="toc-number">1.2.</span> <span class="toc-text">
+          二、使用</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.3.</span> <span class="toc-text">
+          三、常用函数介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#3-4-%E9%9A%8F%E6%9C%BA%E7%94%9F%E6%88%90%E6%8C%87%E5%AE%9A%E7%B1%BB%E5%9E%8B%E6%95%B0%E6%8D%AE"><span class="toc-number">1.3.1.</span> <span class="toc-text">
+          3.4 随机生成指定类型数据</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#3-5-%E9%9A%8F%E6%9C%BA%E7%94%9F%E6%88%90%E5%B8%B8%E7%94%A8%E6%95%B0%E6%8D%AE"><span class="toc-number">1.3.2.</span> <span class="toc-text">
+          3.5 随机生成常用数据</span></a></li></ol></li></ol></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/avatar.png" alt="avatar"></div><p class="sidebar-ov-author__text">binarytree200</p></div><div class="sidebar-ov-social"><a class="sidebar-ov-social-item" href="https://github.com/Binarytree200" target="_blank" rel="noopener" data-popover="Github" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-github"></i></span></a><a class="sidebar-ov-social-item" href="https://plus.google.com/" target="_blank" rel="noopener" data-popover="Google" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-google"></i></span></a><a class="sidebar-ov-social-item" href="https://weibo.com/" target="_blank" rel="noopener" data-popover="微博" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-weibo"></i></span></a><a class="sidebar-ov-social-item" href="https://www.zhihu.com/" target="_blank" rel="noopener" data-popover="知乎" data-popover-pos="up"><span class="sidebar-ov-social-item__icon">知</span></a></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">24</div><div class="sidebar-ov-state-item__name">归档</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">5</div><div class="sidebar-ov-state-item__name">分类</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">6</div><div class="sidebar-ov-state-item__name">标签</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">你已阅读了 </span><span class="sidebar-reading-info__num">0</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2021</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>二叉树</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.1.1"></script><script src="/js/stun-boot.js?v=2.1.1"></script><script src="/js/scroll.js?v=2.1.1"></script><script src="/js/header.js?v=2.1.1"></script><script src="/js/sidebar.js?v=2.1.1"></script></body></html>
