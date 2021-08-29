@@ -29,17 +29,82 @@ var CONFIG = {
   sourcePath: {"js":"js","css":"css","images":"images"},
 };
 
-window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.2.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">归档</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-menu-item__text">分类</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-menu-item__text">标签</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">binarytree200的日记</div><div class="header-banner-info__subtitle"></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content content-home" id="content"><section class="postlist"><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2021/08/29/Tomcat8-%E5%BC%B1%E5%8F%A3%E4%BB%A4-jsp%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/">Tomcat8 弱口令+jsp文件上传</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-08-29</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-08-29</span></span></div></header><div class="post-body"><div class="post-excerpt"><h4 id="Tomcat8-弱口令-jsp文件上传"   >
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">归档</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-menu-item__text">分类</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__icon"><i class="fas fa-tags"></i></span><span class="header-nav-menu-item__text">标签</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">binarytree200的日记</div><div class="header-banner-info__subtitle"></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content content-home" id="content"><section class="postlist"><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2021/08/29/Tomcat8-%E5%BC%B1%E5%8F%A3%E4%BB%A4-jsp%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/">Tomcat8 弱口令+jsp文件上传</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-08-29</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-08-29</span></span></div></header><div class="post-body"><div class="post-excerpt">
+        <h4 id="Tomcat8-弱口令-jsp文件上传"   >
           <a href="#Tomcat8-弱口令-jsp文件上传" class="heading-link"><i class="fas fa-link"></i></a>Tomcat8 弱口令+jsp文件上传</h4>
       <p>Tomcat8默认口令：tomcat/tomcat</p>
-<figure class="highlight awk"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">进入后台管理 http:<span class="regexp">//</span><span class="number">127.0</span>.<span class="number">0.1</span>:<span class="number">8080</span><span class="regexp">/manager/</span>html</span><br></pre></td></tr></table></div></figure></div><div class="post-readmore"><a class="post-readmore__link" href="/2021/08/29/Tomcat8-%E5%BC%B1%E5%8F%A3%E4%BB%A4-jsp%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/"><span class="post-readmore__text">阅读全文</span><span class="post-readmore__icon"><i class="fas fa-long-arrow-alt-right"></i></span></a></div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2021/08/29/Tomcat-CVE-2017-12615/">Tomcat (CVE-2017-12615)</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-08-29</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-08-29</span></span></div></header><div class="post-body"><div class="post-excerpt"><h4 id="Tomcat-CVE-2017-12615"   >
+<figure class="highlight awk"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">进入后台管理 http:<span class="regexp">//</span><span class="number">127.0</span>.<span class="number">0.1</span>:<span class="number">8080</span><span class="regexp">/manager/</span>html</span><br></pre></td></tr></table></div></figure>
+
+<p><img src="%5Cuploads%5C2021%5Cimage-20210829171133747.png" alt="image-20210829171133747"></p>
+<p>找到war上传点</p>
+<p><img src="%5Cuploads%5C2021%5Cimage-20210829171208300.png" alt="image-20210829171208300"></p>
+<p>使用命令将jsp打包成war</p>
+<figure class="highlight mipsasm"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">jar </span>-cvf <span class="keyword">shell.war </span>*.*</span><br></pre></td></tr></table></div></figure>
+
+<p><img src="%5Cuploads%5C2021%5Cimage-20210829174243566.png" alt="image-20210829174243566"></p>
+<p>上传好后 会以文件名 新建Pach目录 /shell</p>
+<p><img src="%5Cuploads%5C2021%5Cimage-20210829174536440.png" alt="image-20210829174536440"></p>
+<p>访问jsp木马地址 返回 200 说明文件存在且可访问</p>
+<p><img src="%5Cuploads%5C2021%5Cimage-20210829180846967.png" alt="image-20210829180846967"></p>
+<p>使用冰蝎子连接（然后可以为所欲为了qwq）</p>
+<p><img src="%5Cuploads%5C2021%5Cimage-20210829180917878.png" alt="image-20210829180917878"></p>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2021/08/29/Tomcat-CVE-2017-12615/">Tomcat (CVE-2017-12615)</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-08-29</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-08-29</span></span></div></header><div class="post-body"><div class="post-excerpt">
+        <h4 id="Tomcat-CVE-2017-12615"   >
           <a href="#Tomcat-CVE-2017-12615" class="heading-link"><i class="fas fa-link"></i></a>Tomcat (CVE-2017-12615)</h4>
       <p>Tomcat版本：8.5.19<br>Apache Tomcat 7.0.0 - 7.0.79</p>
-<p>漏洞产生原因为web.xml配置不当，导致可以使用PUT方法进行任意文件上传 </p></div><div class="post-readmore"><a class="post-readmore__link" href="/2021/08/29/Tomcat-CVE-2017-12615/"><span class="post-readmore__text">阅读全文</span><span class="post-readmore__icon"><i class="fas fa-long-arrow-alt-right"></i></span></a></div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2021/08/28/python%E6%A8%A1%E5%9D%97%E4%B9%8Bscapy%E6%A8%A1%E5%9D%97/">python模块之scapy模块</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-08-28</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-08-28</span></span></div></header><div class="post-body"><div class="post-excerpt"><p>ls(*) Ether、IP、ICMP、TCP、UDP、ARP 可查看详细配置参数</p>
+<p>漏洞产生原因为web.xml配置不当，导致可以使用PUT方法进行任意文件上传 </p>
+<p><img src="%5Cuploads%5C2021%5Cimage-20210829163227011.png" alt="image-20210829163227011"></p>
+<p>readonly方法为false时即可产生漏洞</p>
+<p><img src="%5Cuploads%5C2021%5Cimage-20210829164135335.png" alt="image-20210829164135335"></p>
+<p>使用PUT构造方法上传</p>
+<p><img src="%5Cuploads%5C2021%5Cimage-20210829165248366.png" alt="image-20210829165248366"></p>
+<p><img src="%5Cuploads%5C2021%5Cimage-20210829165320945.png" alt="image-20210829165320945"></p>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2021/08/28/python%E6%A8%A1%E5%9D%97%E4%B9%8Bscapy%E6%A8%A1%E5%9D%97/">python模块之scapy模块</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-08-28</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-08-29</span></span></div></header><div class="post-body"><div class="post-excerpt"><p>ls(*) Ether、IP、ICMP、TCP、UDP、ARP 可查看详细配置参数</p>
 
         <h4 id="1-构建数据包（不同层之间需要用-分隔）"   >
           <a href="#1-构建数据包（不同层之间需要用-分隔）" class="heading-link"><i class="fas fa-link"></i></a>1.构建数据包（不同层之间需要用/分隔）</h4>
-      <figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">Ether = Ether(src=<span class="string">&quot;源MAC地址&quot;</span>，dst=<span class="string">&quot;目的MAC地址&quot;</span>)//以太网层=二层</span><br><span class="line"></span><br><span class="line">IP = IP(src=<span class="string">&quot;源地址ip&quot;</span>，dst=<span class="string">&quot;目的ip或者URL&quot;</span>) //IP层 = 三层</span><br><span class="line"></span><br><span class="line">XY = ICMP()、TCP()、UDP() [都可以用dport=目的端口，sport=源端口]//协议封装在IP层</span><br><span class="line"></span><br><span class="line">ARP = ARP(hwsrc=<span class="string">&#x27;二层源mac&#x27;</span>,psrc=<span class="string">&#x27;三层源IP&#x27;</span>,hwdst=<span class="string">&#x27;二层目的mac&#x27;</span>,pdst=<span class="string">&#x27;三层目的IP&#x27;</span>) </span><br><span class="line"></span><br><span class="line">SJ = padding(load=<span class="string">&#x27;x&#x27;</span>*<span class="number">8</span>) //数据位，填充 x乘<span class="number">8</span>个</span><br><span class="line"></span><br><span class="line">RandMAC() 任意MAC地址</span><br><span class="line"></span><br><span class="line">RandIP() 任意IP地址</span><br><span class="line"></span><br></pre></td></tr></table></div></figure></div><div class="post-readmore"><a class="post-readmore__link" href="/2021/08/28/python%E6%A8%A1%E5%9D%97%E4%B9%8Bscapy%E6%A8%A1%E5%9D%97/"><span class="post-readmore__text">阅读全文</span><span class="post-readmore__icon"><i class="fas fa-long-arrow-alt-right"></i></span></a></div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2021/08/28/%E4%BA%A4%E6%8D%A2%E6%9C%BA%E9%85%8D%E7%BD%AE/">交换机配置</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-08-28</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-08-28</span></span></div></header><div class="post-body"><div class="post-excerpt"><h4 id="交换机配置"   >
+      <figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">Ether = Ether(src=<span class="string">&quot;源MAC地址&quot;</span>，dst=<span class="string">&quot;目的MAC地址&quot;</span>)//以太网层=二层</span><br><span class="line"></span><br><span class="line">IP = IP(src=<span class="string">&quot;源地址ip&quot;</span>，dst=<span class="string">&quot;目的ip或者URL&quot;</span>) //IP层 = 三层</span><br><span class="line"></span><br><span class="line">XY = ICMP()、TCP()、UDP() [都可以用dport=目的端口，sport=源端口]//协议封装在IP层</span><br><span class="line"></span><br><span class="line">ARP = ARP(hwsrc=<span class="string">&#x27;二层源mac&#x27;</span>,psrc=<span class="string">&#x27;三层源IP&#x27;</span>,hwdst=<span class="string">&#x27;二层目的mac&#x27;</span>,pdst=<span class="string">&#x27;三层目的IP&#x27;</span>) </span><br><span class="line"></span><br><span class="line">SJ = padding(load=<span class="string">&#x27;x&#x27;</span>*<span class="number">8</span>) //数据位，填充 x乘<span class="number">8</span>个</span><br><span class="line"></span><br><span class="line">RandMAC() 任意MAC地址</span><br><span class="line"></span><br><span class="line">RandIP() 任意IP地址</span><br><span class="line"></span><br></pre></td></tr></table></div></figure>
+
+
+        <h5 id="构建二层包：-以Ether层开头"   >
+          <a href="#构建二层包：-以Ether层开头" class="heading-link"><i class="fas fa-link"></i></a>构建二层包：(以Ether层开头)</h5>
+      <figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pkt=Ether/IP/ARP</span><br><span class="line"></span><br><span class="line">pkt=(Ether(src=<span class="string">&quot;源MAC地址&quot;</span>，dst=<span class="string">&quot;目的MAC地址&quot;</span>)/IP(src=<span class="string">&quot;源地址ip&quot;</span>，dst=<span class="string">&quot;目的ip或者URL&quot;</span>)/ARP = ARP(hwsrc=<span class="string">&#x27;二层源mac&#x27;</span>,psrc=<span class="string">&#x27;三层源IP&#x27;</span>,hwdst=<span class="string">&#x27;二层目的mac&#x27;</span>,pdst=<span class="string">&#x27;三层目的IP&#x27;</span>) )</span><br></pre></td></tr></table></div></figure>
+
+
+
+
+        <h5 id="构建三层包：-以IP层开头"   >
+          <a href="#构建三层包：-以IP层开头" class="heading-link"><i class="fas fa-link"></i></a>构建三层包：(以IP层开头)</h5>
+      <figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pkt=IP/XY/SJ</span><br><span class="line"></span><br><span class="line">pkt=（IP(src=<span class="string">&quot;源地址ip&quot;</span>，dst=<span class="string">&quot;目的ip或者URL&quot;</span>)/TCP(spost=源端口，dpost=目的端口)/padding(load=<span class="string">&#x27;x&#x27;</span>*<span class="number">8</span>)）</span><br></pre></td></tr></table></div></figure>
+
+
+        <h4 id="2-只发送"   >
+          <a href="#2-只发送" class="heading-link"><i class="fas fa-link"></i></a>2.只发送</h4>
+      <figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">二层：sendp() //给定网卡接口</span><br><span class="line"></span><br><span class="line">三层：send() //自动根据路由表进行路由发送</span><br><span class="line"></span><br><span class="line">如发二层包：</span><br><span class="line"></span><br><span class="line">sendp（pkt,iface=<span class="string">&quot;eth0&quot;</span>,loop=<span class="number">1</span>,inter=<span class="number">1</span> ）</span><br><span class="line"></span><br><span class="line">参数：</span><br><span class="line"></span><br><span class="line">pkt 构建包的变量</span><br><span class="line"></span><br><span class="line">iface=<span class="string">&quot;eth0&quot;</span> 选择网卡为eth0</span><br><span class="line"></span><br><span class="line">loop=<span class="number">1</span> 循环发送</span><br><span class="line"></span><br><span class="line">inter=<span class="number">1</span> 每隔<span class="number">1</span>秒发送</span><br><span class="line"></span><br><span class="line">timeout=<span class="number">1</span> 超时<span class="number">1</span>秒就丢弃，实际时间看程序处理能力而定</span><br></pre></td></tr></table></div></figure>
+
+
+        <h4 id="3-发送并返回"   >
+          <a href="#3-发送并返回" class="heading-link"><i class="fas fa-link"></i></a>3.发送并返回</h4>
+      <figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">二层：</span><br><span class="line"></span><br><span class="line">srp() //发送包， 返回答复和没有答复的包的数量</span><br><span class="line"></span><br><span class="line">srp1() //发送包， 返回只答复或者发送的包的详细信息| .参数，显示这个参数的返回数据</span><br><span class="line"></span><br><span class="line">三层：</span><br><span class="line"></span><br><span class="line">sr( ) //发送包， 返回答复和没有答复的包的数量</span><br><span class="line">ans,unans =sr(IP(dst=<span class="string">&quot;www.baidu.com&quot;</span>)/TCP(dport = [<span class="number">22</span>,<span class="number">21</span>,<span class="number">80</span>,<span class="number">445</span>]))</span><br><span class="line"></span><br><span class="line">sr1( ) //发送包， 返回只答复或者发送的包的详细信息|.参数，显示这个参数的返回数据</span><br><span class="line">ans,unans =sr1(IP(dst=<span class="string">&quot;www.baidu.com&quot;</span>)/TCP(dport = [<span class="number">22</span>,<span class="number">21</span>,<span class="number">80</span>,<span class="number">445</span>]))</span><br><span class="line">如二层发收包：</span><br><span class="line"></span><br><span class="line">srp1（pkt,timeout=<span class="number">1</span>,verbose=<span class="number">0</span> ）</span><br><span class="line"></span><br><span class="line">参数：</span><br><span class="line"></span><br><span class="line">pkt 构建包的变量</span><br><span class="line"></span><br><span class="line">timeout=<span class="number">1</span> 超时<span class="number">1</span>秒就丢弃，实际时间看程序处理能力而定</span><br><span class="line"></span><br><span class="line">verbose=<span class="number">0</span> 不显示详细信息</span><br></pre></td></tr></table></div></figure>
+
+
+        <h4 id="4-函数使用"   >
+          <a href="#4-函数使用" class="heading-link"><i class="fas fa-link"></i></a>4.函数使用</h4>
+      <p>可以用ls()函数来查看scapy支持的网络协议, 可以看到网工们耳熟能详的ARP, BOOTP, Dot1Q, DHCP, DNS, GRE, HSRP, ICMP, IP, NTP, RIP, SNMP, STP, PPPoE, TCP, TFTP, UDP等等统统都支持。</p>
+<p><img src="%5Cuploads%5C2021%5Cimage-20210715142200772.png" alt="image-20210715142200772"></p>
+<p>除了ls()外，还可以用lsc()函数来查看scapy的指令集（函数）。比较常用的函数包括arpcachepoison（用于arp毒化攻击，也叫arp欺骗攻击），arping（用于构造一个ARP的who-has包） ，send(用于发3层报文)，sendp（用于发2层报文）, sniff（用于网络嗅探，类似Wireshark和tcpdump）, sr（发送+接收3层报文），srp（发送+接收2层报文）等等。</p>
+<p><img src="%5Cuploads%5C2021%5Cimage-20210715142500326.png" alt="image-20210715142500326"></p>
+<p><img src="%5Cuploads%5C2021%5Cimage-20210715142930305.png" alt="image-20210715142930305"></p>
+<p>show(), summary(), nsummary()等方法来查看ans的内容</p>
+<p><img src="%5Cuploads%5C2021%5Cimage-20210715143854885.png" alt="image-20210715143854885"></p>
+<p>使用RandShort(), RandNum()和Fuzz()这几个函数来让scapy帮你自动生成一个随机的端口号，通常可以用作sport(源端口号)</p>
+<p><img src="%5Cuploads%5C2021%5Cimage-20210715151538292.png" alt="image-20210715151538292"></p>
+<p>如果你想指定scapy生成端口号的范围，可以使用RandNum()，比如你只想在1000-1500这个范围内生成端口号，可以使用RandNum(1000,1500)来指定</p>
+<p><img src="%5Cuploads%5C2021%5Cimage-20210715152715061.png" alt="image-20210715152715061"></p>
+<p>fuzz()函数，前面的RandShort()和RandNum()都是写在sport后面的（当然也可以写在dport后面用来随机生成目的端口号），用fuzz()的话则可以省略sport这部分，fuzz()会帮你检测到你漏写了sport，然后帮你随机生成一个sport也就是源端口号</p>
+<p><img src="%5Cuploads%5C2021%5Cimage-20210715153119604.png" alt="image-20210715153119604"></p>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2021/08/28/%E4%BA%A4%E6%8D%A2%E6%9C%BA%E9%85%8D%E7%BD%AE/">交换机配置</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-08-28</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-08-29</span></span></div></header><div class="post-body"><div class="post-excerpt">
+        <h4 id="交换机配置"   >
           <a href="#交换机配置" class="heading-link"><i class="fas fa-link"></i></a>交换机配置</h4>
       <p>system-view #进入配置视图</p>
 <p>display mac-address #查看已缓存的MAC地址</p>
@@ -53,7 +118,69 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.2.0"></he
 <p>undo port default vlan #清除当前接口配置文件（需先进去接口）</p>
 <p>undo terminal monitor #关闭debug</p>
 <p>undo terminal debugging #关闭debug</p>
-<p>display ip routing-table #查看路由表</p></div><div class="post-readmore"><a class="post-readmore__link" href="/2021/08/28/%E4%BA%A4%E6%8D%A2%E6%9C%BA%E9%85%8D%E7%BD%AE/"><span class="post-readmore__text">阅读全文</span><span class="post-readmore__icon"><i class="fas fa-long-arrow-alt-right"></i></span></a></div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2021/08/28/python%E6%A8%A1%E5%9D%97%E4%B9%8Bfaker%E6%A8%A1%E5%9D%97/">python模块之faker模块</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-08-28</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-08-28</span></span></div></header><div class="post-body"><div class="post-excerpt"><h4 id="python模块一之faker模块"   >
+<p>display ip routing-table #查看路由表</p>
+<p>interface vlan 10 #进入vlan10 视图（只有进入vlan视图交换机才可以配置IP）</p>
+<p>ip route-static 192.168.3.0 255.255.255.0 192.168.2.2 #写入静态路由</p>
+<p>undo ip route-static 192.168.3.0 255.255.255.0 #删除静态路由表</p>
+<p>ip address 192.168.1.1 24 #接口添加IP （需先进去接口）</p>
+<p>ip route-static 0.0.0.0 0.0.0.0 192.168.2.2 #写入默认路由 （注意一般默认路由用在出口路由器 常规内网尽量使用静态路由 出口路由存不了那么多静态路由条目）</p>
+<p>display current-configuration #查看配置</p>
+
+        <h4 id="动态路由RIP"   >
+          <a href="#动态路由RIP" class="heading-link"><i class="fas fa-link"></i></a>动态路由RIP</h4>
+      <p>rip #进入rip</p>
+<p>network 192.168.2.0 #学习路由器上自己的两条链路</p>
+<p>network 10.0.0.0 #学习路由器上自己的两条链路</p>
+<p>undo network 10.0.0.0 #删除RIP动态路由链路 （需先进去RIP）</p>
+
+        <h4 id="动态路由OSPF"   >
+          <a href="#动态路由OSPF" class="heading-link"><i class="fas fa-link"></i></a>动态路由OSPF</h4>
+      <p>ospf 0 #进入ospf区域0</p>
+<p>area 0#进去area区域0</p>
+<p>network 192.168.2.0 0.0.0.255 #学习路由器上自己的两条链路 后面加上反掩码</p>
+<p>network 10.0.0.0 0.0.0.255  #学习路由器上自己的两条链路 后面加上反掩码</p>
+<p>undo network 192.168.2.0 0.0.0.255 #删除OSPF动态路由链路 （需先进去OSPF）</p>
+<p>OSPF区域划分</p>
+<p><img src="%5Cuploads%5C2021%5Cimage-20210815162131834.png" alt="image-20210815162131834"></p>
+<p><img src="%5Cuploads%5C2021%5Cimage-20210815162155842.png" alt="image-20210815162155842"></p>
+
+        <h4 id="单臂路由配置"   >
+          <a href="#单臂路由配置" class="heading-link"><i class="fas fa-link"></i></a>单臂路由配置</h4>
+      <p>先配置好vlan，然后在交换机出口配置trunk</p>
+<p>port link-type trunk #开启trunk模式</p>
+<p>port trunk allow-pass vlan all #trunk模式下放通所有vlan</p>
+<figure class="highlight apache"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">interface</span> g<span class="number">0</span>/<span class="number">0</span>/<span class="number">0</span>.<span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="attribute">ip</span> address <span class="number">192.168.2.1</span> <span class="number">24</span></span><br><span class="line"></span><br><span class="line"><span class="attribute">dot1q</span> termination vid <span class="number">30</span></span><br><span class="line"><span class="comment">#在g0/0/1模拟出1.1 配置网关</span></span><br></pre></td></tr></table></div></figure>
+
+<figure class="highlight apache"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">interface</span> g<span class="number">0</span>/<span class="number">0</span>/<span class="number">0</span>.<span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="attribute">arp</span> broadcast enable</span><br><span class="line"><span class="comment">#进入1.1 开启ARP广播</span></span><br></pre></td></tr></table></div></figure>
+
+
+
+
+        <h4 id="开启DHCP"   >
+          <a href="#开启DHCP" class="heading-link"><i class="fas fa-link"></i></a>开启DHCP</h4>
+      <p>dhcp enable</p>
+<p>ip pool huawei #定义一个IP地址池的名字</p>
+<p>network 192.168.1.0 mask 24 #定义地址池的范围</p>
+<p>gateway-list 192.168.1.1 #定义网关地址</p>
+<p>excluded-ip-address 192.168.1.2 192.168.1.253 #定义排除访问现在就留了一个192.168.1.254的地址</p>
+<p>dns-list 8.8.8.8 #定义dns地址</p>
+<p>interface g0/0/0 #进去接口</p>
+<p>ip address 192.168.1.1 24 #给接口分配网关地址</p>
+<p>dhcp select global #开启全局DHCP</p>
+<p><img src="%5Cuploads%5C2021%5Cimage-20210815195251617.png" alt="image-20210815195251617"></p>
+
+        <h4 id="链路聚合（eth-trunk）"   >
+          <a href="#链路聚合（eth-trunk）" class="heading-link"><i class="fas fa-link"></i></a>链路聚合（eth-trunk）</h4>
+      <p>就是把多根线从逻辑上聚合在一起当作一根线来使用，链路聚合分为两种模式，手工模式和LACP，LACP可以再聚合一个链路当备用。</p>
+<p>interface Eth-Trunk 1 #创建进去Eth-Trunk 1 </p>
+<p>mode manual load-balance #修改聚合链路模式（手工模式）</p>
+<p>interface g0/0/1 #进入接口视图</p>
+<p>eth-trunk 1 #把接口改到trunk 1</p>
+<p>display eth-trunk 1 #查看eth-trunk 1启用情况</p>
+<p><img src="%5Cuploads%5C2021%5Cimage-20210815201142779.png" alt="image-20210815201142779"></p>
+<p><img src="%5Cuploads%5C2021%5Cimage-20210815201230010.png" alt="image-20210815201230010"></p>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2021/08/28/python%E6%A8%A1%E5%9D%97%E4%B9%8Bfaker%E6%A8%A1%E5%9D%97/">python模块之faker模块</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2021-08-28</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2021-08-29</span></span></div></header><div class="post-body"><div class="post-excerpt">
+        <h4 id="python模块一之faker模块"   >
           <a href="#python模块一之faker模块" class="heading-link"><i class="fas fa-link"></i></a>python模块一之faker模块</h4>
       <p>faker模块主要是用来创建伪数据，无需手动生成或者手写随机数来生成数据，可以利用faker完成伪造大量测试数据的工作</p>
 
@@ -66,7 +193,159 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.2.0"></he
       <p>from faker import Faker</p>
 <p>f = Faker(locale=’zh_CN’)      #为生成数据的文化选项，默认为en_US，只有使用了相关文化，才能生成对应的随机信息，由于文化差异，设置文化的时候会导致有些字段比如省份等会出现方法报错等问题</p>
 <p>for i in range(5):</p>
-<figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(f.name() + <span class="string">&quot;:&quot;</span> + f.address())   <span class="comment">#随机生成中文姓名和地址,name()函数生成姓名，address()函数生成地址</span></span><br></pre></td></tr></table></div></figure></div><div class="post-readmore"><a class="post-readmore__link" href="/2021/08/28/python%E6%A8%A1%E5%9D%97%E4%B9%8Bfaker%E6%A8%A1%E5%9D%97/"><span class="post-readmore__text">阅读全文</span><span class="post-readmore__icon"><i class="fas fa-long-arrow-alt-right"></i></span></a></div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2020/09/23/79/">mysql中information_schema数据库说明（SQL注入查询数据库 表 列来源）</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2020-09-23</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2020-09-23</span></span></div></header><div class="post-body"><div class="post-excerpt"><p>mysql中information_schema.tables字段说明</p></div><div class="post-readmore"><a class="post-readmore__link" href="/2020/09/23/79/"><span class="post-readmore__text">阅读全文</span><span class="post-readmore__icon"><i class="fas fa-long-arrow-alt-right"></i></span></a></div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2020/09/22/69/">mysql 基本语法（学习sql注入入门）</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2020-09-22</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2020-09-22</span></span></div></header><div class="post-body"><div class="post-excerpt"><p>菜鸟MYSQL学习地址 <span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://www.runoob.com/mysql/mysql-tutorial.html" >https://www.runoob.com/mysql/mysql-tutorial.html</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span><br>备注数据库：text_db<br>查看数据库（所有的） SHOW DATABASES;<br>创建数据库 CREATE DATABASE text_db;<br>查看指定数据库 SHOW CREATE DATABASE text_db;<br>使用数据库 USE text_db;<br>删除数据库 DROP DATABASE text_db;<br>备注:创建表 创建列的时候先用USE进入新建的数据库再进行创建<br>创建表 创建列 CREATE TABLE name_table(name_lie INT(11),name_lie2 INT(11),name_lie3 INT(11));</p></div><div class="post-readmore"><a class="post-readmore__link" href="/2020/09/22/69/"><span class="post-readmore__text">阅读全文</span><span class="post-readmore__icon"><i class="fas fa-long-arrow-alt-right"></i></span></a></div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2017/12/05/63/">Linux常用操作命令 (vi/vim编辑器篇) 1.5</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2017-12-05</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2019-10-01</span></span></div></header><div class="post-body"><div class="post-excerpt"><p>vi有3个模式：插入模式、命令模式、底行模式。<br>插入模式：在此模式下可以输入字符，按ESC将回到命令模式。<br>命令模式：可以移动光标、删除字符等。<br>底行模式：可以保存文件、退出vi、设置vi、查找等功能(低行模式也可以看作是命令模式里的)。<br>注意;在使用底行模式（又称命令模式它俩可以理解成一个）之前，请记住先按 ESC 键确定您已经处于命令行模式下后，再按冒号 : 即可进入底行模式。</p></div><div class="post-readmore"><a class="post-readmore__link" href="/2017/12/05/63/"><span class="post-readmore__text">阅读全文</span><span class="post-readmore__icon"><i class="fas fa-long-arrow-alt-right"></i></span></a></div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2017/12/04/61/">Linux常用操作命令 (高级篇) 1.4</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2017-12-04</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2019-10-01</span></span></div></header><div class="post-body"><div class="post-excerpt"><p>常用的文本操作命令<br>命令 cat<br>功能 显示整个文件内容</p>
+<figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(f.name() + <span class="string">&quot;:&quot;</span> + f.address())   <span class="comment">#随机生成中文姓名和地址,name()函数生成姓名，address()函数生成地址</span></span><br></pre></td></tr></table></div></figure>
+
+
+        <h5 id="三、常用函数介绍"   >
+          <a href="#三、常用函数介绍" class="heading-link"><i class="fas fa-link"></i></a>三、常用函数介绍</h5>
+      <p>city_suffix()：市，县</p>
+<p>country()：国家</p>
+<p>country_code()：国家编码</p>
+<p>district()：区</p>
+<p>geo_coordinate()：地理坐标</p>
+<p>latitude()：地理坐标(纬度)</p>
+<p>longitude()：地理坐标(经度)</p>
+<p>lexify()：替换所有问号（“？”）带有随机字母的事件。</p>
+<p>numerify()：三位随机数字</p>
+<p>postcode()：邮编</p>
+<p>province()：省份</p>
+<p>street_address()：街道地址</p>
+<p>street_name()：街道名</p>
+<p>street_suffix()：街、路</p>
+<p>random_digit()：0~9随机数</p>
+<p>random_digit_not_null()：1~9的随机数</p>
+<p>random_element()：随机字母</p>
+<p>random_int()：随机数字，默认0~9999，可以通过设置min,max来设置</p>
+<p>random_letter()：随机字母</p>
+<p>random_number()：随机数字，参数digits设置生成的数字位数</p>
+<p>color_name()：随机颜色名</p>
+<p>hex_color()：随机HEX颜色</p>
+<p>rgb_color()：随机RGB颜色</p>
+<p>safe_color_name()：随机安全色名</p>
+<p>safe_hex_color()：随机安全HEX颜色</p>
+<p>bs()：随机公司服务名</p>
+<p>company()：随机公司名（长）</p>
+<p>company_prefix()：随机公司名（短）</p>
+<p>company_suffix()：公司性质</p>
+<p>credit_card_expire()：随机信用卡到期日</p>
+<p>credit_card_full()：生成完整信用卡信息</p>
+<p>credit_card_number()：信用卡号</p>
+<p>credit_card_provider()：信用卡类型</p>
+<p>credit_card_security_code()：信用卡安全码</p>
+<p>currency_code()：货币编码</p>
+<p>am_pm()：AM/PM</p>
+<p>century()：随机世纪</p>
+<p>date()：随机日期</p>
+<p>date_between()：随机生成指定范围内日期，参数：start_date，end_date取值：具体日期或者today,-30d,-30y类似</p>
+<p>date_between_dates()：随机生成指定范围内日期，用法同上</p>
+<p>date_object()：随机生产从1970-1-1到指定日期的随机日期。</p>
+<p>date_this_month()：</p>
+<p>date_this_year()：</p>
+<p>date_time()：随机生成指定时间（1970年1月1日至今）</p>
+<p>date_time_ad()：生成公元1年到现在的随机时间</p>
+<p>date_time_between()：用法同dates</p>
+<p>future_date()：未来日期</p>
+<p>future_datetime()：未来时间</p>
+<p>month()：随机月份</p>
+<p>month_name()：随机月份（英文）</p>
+<p>past_date()：随机生成已经过去的日期</p>
+<p>past_datetime()：随机生成已经过去的时间</p>
+<p>time()：随机24小时时间</p>
+<p>timedelta()：随机获取时间差</p>
+<p>time_object()：随机24小时时间，time对象</p>
+<p>time_series()：随机TimeSeries对象</p>
+<p>timezone()：随机时区</p>
+<p>unix_time()：随机Unix时间</p>
+<p>year()：随机年份</p>
+<p>file_extension()：随机文件扩展名</p>
+<p>file_name()：随机文件名（包含扩展名，不包含路径）</p>
+<p>file_path()：随机文件路径（包含文件名，扩展名）</p>
+<p>mime_type()：随机mime Type</p>
+<p>ascii_company_email()：随机ASCII公司邮箱名</p>
+<p>ascii_email()：随机ASCII邮箱</p>
+<p>ascii_free_email()：</p>
+<p>ascii_safe_email()：</p>
+<p>company_email()：</p>
+<p>domain_name()：生成域名</p>
+<p>domain_word()：域词(即，不包含后缀)</p>
+<p>email()：</p>
+<p>free_email()：</p>
+<p>free_email_domain()：</p>
+<p>f.safe_email()：安全邮箱</p>
+<p>f.image_url()：随机URL地址</p>
+<p>ipv4()：随机IP4地址</p>
+<p>ipv6()：随机IP6地址</p>
+<p>mac_address()：随机MAC地址</p>
+<p>tld()：网址域名后缀(.com,.net.cn,等等，不包括.)</p>
+<p>uri()：随机URI地址</p>
+<p>uri_extension()：网址文件后缀</p>
+<p>uri_page()：网址文件（不包含后缀）</p>
+<p>uri_path()：网址文件路径（不包含文件名）</p>
+<p>url()：随机URL地址</p>
+<p>user_name()：随机用户名</p>
+<p>isbn10()：随机ISBN（10位）</p>
+<p>isbn13()：随机ISBN（13位）</p>
+<p>job()：随机职位</p>
+<p>paragraph()：随机生成一个段落</p>
+<p>paragraphs()：随机生成多个段落，通过参数nb来控制段落数，返回数组</p>
+<p>sentence()：随机生成一句话</p>
+<p>sentences()：随机生成多句话，与段落类似</p>
+<p>text()：随机生成一篇文章（不要幻想着人工智能了，至今没完全看懂一句话是什么意思）</p>
+<p>word()：随机生成词语</p>
+<p>words()：随机生成多个词语，用法与段落，句子，类似</p>
+<p>binary()：随机生成二进制编码</p>
+<p>boolean()：True/False</p>
+<p>language_code()：随机生成两位语言编码</p>
+<p>locale()：随机生成语言/国际 信息</p>
+<p>md5()：随机生成MD5</p>
+<p>null_boolean()：NULL/True/False</p>
+<p>password()：随机生成密码,可选参数：length：密码长度；special_chars：是否能使用特殊字符；digits：是否包含数字；upper_case：是否包含大写字母；lower_case：是否包含小写字母</p>
+<p>sha1()：随机SHA1</p>
+<p>sha256()：随机SHA256</p>
+<p>uuid4()：随机UUID</p>
+<p>first_name()：</p>
+<p>first_name_female()：女性名</p>
+<p>first_name_male()：男性名</p>
+<p>first_romanized_name()：罗马名</p>
+<p>last_name()：</p>
+<p>last_name_female()：女姓</p>
+<p>last_name_male()：男姓</p>
+<p>last_romanized_name()：</p>
+<p>name()：随机生成全名</p>
+<p>name_female()：男性全名</p>
+<p>name_male()：女性全名</p>
+<p>romanized_name()：罗马名</p>
+<p>msisdn()：移动台国际用户识别码，即移动用户的ISDN号码</p>
+<p>phone_number()：随机生成手机号</p>
+<p>phonenumber_prefix()：随机生成手机号段</p>
+<p>profile()：随机生成档案信息</p>
+<p>simple_profile()：随机生成简单档案信息</p>
+
+        <h6 id="3-4-随机生成指定类型数据"   >
+          <a href="#3-4-随机生成指定类型数据" class="heading-link"><i class="fas fa-link"></i></a>3.4 随机生成指定类型数据</h6>
+      <p>pybool()：布尔类型</p>
+<p>pydecimal()：数字</p>
+<p>pydict()：字典</p>
+<p>pyfloat()：left_digits=5 #生成的整数位数, right_digits=2 #生成的小数位数, positive=True #是否只有正数</p>
+<p>pyint()：整型</p>
+<p>pyiterable()：迭代器</p>
+<p>pylist()：列表</p>
+<p>pyset()：集合</p>
+<p>pystr()：字符串</p>
+<p>pystruct()：结构体</p>
+<p>pytuple()：元组</p>
+
+        <h6 id="3-5-随机生成常用数据"   >
+          <a href="#3-5-随机生成常用数据" class="heading-link"><i class="fas fa-link"></i></a>3.5 随机生成常用数据</h6>
+      <p>ssn()：生成身份证号</p>
+<p>chrome()：随机生成Chrome的浏览器user_agent信息</p>
+<p>firefox()：随机生成FireFox的浏览器user_agent信息</p>
+<p>internet_explorer()：随机生成IE的浏览器user_agent信息</p>
+<p>opera()：随机生成Opera的浏览器user_agent信息</p>
+<p>safari()：随机生成Safari的浏览器user_agent信息</p>
+<p>linux_platform_token()：随机Linux信息</p>
+<p>user_agent()：随机user_agent信息</p>
+</div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2020/09/23/79/">mysql中information_schema数据库说明（SQL注入查询数据库 表 列来源）</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2020-09-23</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2020-09-23</span></span></div></header><div class="post-body"><div class="post-excerpt"><p>mysql中information_schema.tables字段说明</p></div><div class="post-readmore"><a class="post-readmore__link" href="/2020/09/23/79/"><span class="post-readmore__text">阅读全文</span><span class="post-readmore__icon"><i class="fas fa-long-arrow-alt-right"></i></span></a></div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2020/09/22/69/">mysql 基本语法（学习sql注入入门）</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2020-09-22</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2020-09-22</span></span></div></header><div class="post-body"><div class="post-excerpt"><p>菜鸟MYSQL学习地址 <span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="https://www.runoob.com/mysql/mysql-tutorial.html" >https://www.runoob.com/mysql/mysql-tutorial.html</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span><br>备注数据库：text_db<br>查看数据库（所有的） SHOW DATABASES;<br>创建数据库 CREATE DATABASE text_db;<br>查看指定数据库 SHOW CREATE DATABASE text_db;<br>使用数据库 USE text_db;<br>删除数据库 DROP DATABASE text_db;<br>备注:创建表 创建列的时候先用USE进入新建的数据库再进行创建<br>创建表 创建列 CREATE TABLE name_table(name_lie INT(11),name_lie2 INT(11),name_lie3 INT(11));</p></div><div class="post-readmore"><a class="post-readmore__link" href="/2020/09/22/69/"><span class="post-readmore__text">阅读全文</span><span class="post-readmore__icon"><i class="fas fa-long-arrow-alt-right"></i></span></a></div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2017/12/05/63/">Linux常用操作命令 (vi/vim编辑器篇) 1.5</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2017-12-05</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2019-10-01</span></span></div></header><div class="post-body"><div class="post-excerpt"><p>vi有3个模式：插入模式、命令模式、底行模式。<br>插入模式：在此模式下可以输入字符，按ESC将回到命令模式。<br>命令模式：可以移动光标、删除字符等。<br>底行模式：可以保存文件、退出vi、设置vi、查找等功能(低行模式也可以看作是命令模式里的)。<br>注意;在使用底行模式（又称命令模式它俩可以理解成一个）之前，请记住先按 ESC 键确定您已经处于命令行模式下后，再按冒号 : 即可进入底行模式。</p></div><div class="post-readmore"><a class="post-readmore__link" href="/2017/12/05/63/"><span class="post-readmore__text">阅读全文</span><span class="post-readmore__icon"><i class="fas fa-long-arrow-alt-right"></i></span></a></div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2017/12/04/61/">Linux常用操作命令 (高级篇) 1.4</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2017-12-04</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2019-10-01</span></span></div></header><div class="post-body"><div class="post-excerpt"><p>常用的文本操作命令<br>命令 cat<br>功能 显示整个文件内容</p>
 <p>命令 diff<br>功能 显示两个文件的差距和不同</p>
 <p>命令 wc<br>功能 ：<br>wc myalllist 统计文本指定的行数，字数，字符数<br>wc -l myalllist 统计指定文本的行数</p></div><div class="post-readmore"><a class="post-readmore__link" href="/2017/12/04/61/"><span class="post-readmore__text">阅读全文</span><span class="post-readmore__icon"><i class="fas fa-long-arrow-alt-right"></i></span></a></div></div></article><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2017/11/27/52/">Linux常用操作命令 (进阶篇) 1.3</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2017-11-27</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2019-10-01</span></span></div></header><div class="post-body"><div class="post-excerpt"><p>ls -a 列表显示当前目录下的文件和目录<br>ls -l 以长格式方式列表显示结果<br><img src="/uploads/2017/11/3281794692.png" alt="ls.png"></p>
 <p>mkdir -p<br>当你要创建的目录包含子目录时，你需要使用 -p 参数。假如mkdir找不到父目录，那么这个参数会首先帮助创建父目录，然后再创建子目录</p></div><div class="post-readmore"><a class="post-readmore__link" href="/2017/11/27/52/"><span class="post-readmore__text">阅读全文</span><span class="post-readmore__icon"><i class="fas fa-long-arrow-alt-right"></i></span></a></div></div></article></section><nav class="paginator"><div class="paginator-inner"><span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fas fa-angle-right"></i></a></div></nav></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><section class="sidebar-toc hide"></section><!-- ov = overview--><section class="sidebar-ov"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/avatar.png" alt="avatar"></div><p class="sidebar-ov-author__text">binarytree200</p></div><div class="sidebar-ov-social"><a class="sidebar-ov-social-item" href="https://github.com/Binarytree200" target="_blank" rel="noopener" data-popover="Github" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-github"></i></span></a><a class="sidebar-ov-social-item" href="https://plus.google.com/" target="_blank" rel="noopener" data-popover="Google" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-google"></i></span></a><a class="sidebar-ov-social-item" href="https://weibo.com/" target="_blank" rel="noopener" data-popover="微博" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-weibo"></i></span></a><a class="sidebar-ov-social-item" href="https://www.zhihu.com/" target="_blank" rel="noopener" data-popover="知乎" data-popover-pos="up"><span class="sidebar-ov-social-item__icon">知</span></a></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">26</div><div class="sidebar-ov-state-item__name">归档</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">6</div><div class="sidebar-ov-state-item__name">分类</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">7</div><div class="sidebar-ov-state-item__name">标签</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2021</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>二叉树</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.1.1"></script><script src="/js/stun-boot.js?v=2.1.1"></script><script src="/js/scroll.js?v=2.1.1"></script><script src="/js/header.js?v=2.1.1"></script><script src="/js/sidebar.js?v=2.1.1"></script></body></html>
