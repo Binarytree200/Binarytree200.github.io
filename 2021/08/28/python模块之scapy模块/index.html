@@ -13,7 +13,7 @@
 <meta property="og:image" content="https://binarytree200.github.io/uploads/2021/image-20210715152715061.png">
 <meta property="og:image" content="https://binarytree200.github.io/uploads/2021/image-20210715153119604.png">
 <meta property="article:published_time" content="2021-08-28T09:43:00.000Z">
-<meta property="article:modified_time" content="2021-08-29T11:41:17.372Z">
+<meta property="article:modified_time" content="2021-08-29T11:50:20.605Z">
 <meta property="article:author" content="二叉树">
 <meta property="article:tag" content="python">
 <meta name="twitter:card" content="summary">
@@ -45,7 +45,7 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.0"></he
         <h4 id="1-构建数据包（不同层之间需要用-分隔）"   >
           <a href="#1-构建数据包（不同层之间需要用-分隔）" class="heading-link"><i class="fas fa-link"></i></a>1.构建数据包（不同层之间需要用/分隔）</h4>
       <figure class="highlight python"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">Ether = Ether(src=<span class="string">&quot;源MAC地址&quot;</span>，dst=<span class="string">&quot;目的MAC地址&quot;</span>)//以太网层=二层</span><br><span class="line"></span><br><span class="line">IP = IP(src=<span class="string">&quot;源地址ip&quot;</span>，dst=<span class="string">&quot;目的ip或者URL&quot;</span>) //IP层 = 三层</span><br><span class="line"></span><br><span class="line">XY = ICMP()、TCP()、UDP() [都可以用dport=目的端口，sport=源端口]//协议封装在IP层</span><br><span class="line"></span><br><span class="line">ARP = ARP(hwsrc=<span class="string">&#x27;二层源mac&#x27;</span>,psrc=<span class="string">&#x27;三层源IP&#x27;</span>,hwdst=<span class="string">&#x27;二层目的mac&#x27;</span>,pdst=<span class="string">&#x27;三层目的IP&#x27;</span>) </span><br><span class="line"></span><br><span class="line">SJ = padding(load=<span class="string">&#x27;x&#x27;</span>*<span class="number">8</span>) //数据位，填充 x乘<span class="number">8</span>个</span><br><span class="line"></span><br><span class="line">RandMAC() 任意MAC地址</span><br><span class="line"></span><br><span class="line">RandIP() 任意IP地址</span><br><span class="line"></span><br></pre></td></tr></table></div></figure>
-
+<span id="more"></span>
 
         <h5 id="构建二层包：-以Ether层开头"   >
           <a href="#构建二层包：-以Ether层开头" class="heading-link"><i class="fas fa-link"></i></a>构建二层包：(以Ether层开头)</h5>
